@@ -1,4 +1,4 @@
-export default class Person {
+export default class Question {
   constructor({ name, height, birth_year, eye_color }) {
     this.name = name
     this.height = height

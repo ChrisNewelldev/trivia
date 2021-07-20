@@ -1,11 +1,11 @@
 import { ProxyState } from "../AppState.js";
-import { peoplesService } from "../Services/PeoplesService.js";
+import { questionsService } from "../Services/QuestionssService.js";
 
 function _draw() {
-  let people = ProxyState.people
+  let question = ProxyState.question
   let template = ''
-  people.forEach(p => template += p.Template)
-  document.getElementById('people').innerHTML = template
+  question.forEach(q => template += q.Template)
+  document.getElementById('question').innerHTML = template
 
   document.getElementById('buttons').innerHTML = `
   <button type="button" class="btn btn-warning" ${ProxyState.previous ? '' : 'disabled'}

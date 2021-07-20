@@ -1,9 +1,9 @@
 import { ProxyState } from "../AppState.js"
-import Person from "../Models/Person.js"
+import Question from "../Models/Question.js"
 import { api } from "./AxiosService.js"
 
-class PeoplesService {
-  async getAllPeople(url = 'people') {
+class sService {
+  async getAllQuestion(url = 'question') {
     // NOTE any string passed into the request, is concat'ed on to the end of baseURL with an optional '/'
     // ALL AXIOS REQUESTS RETURN A PROMISE  
 
@@ -15,10 +15,10 @@ class PeoplesService {
     ProxyState.previous = res.data.previous
 
     // itterate over the array of POJOs and turn them into Person
-    let people = res.data.results.map(p => new Person(p))
-    ProxyState.people = people
+    let questions = res.data.results.map(q => new Question(q))
+    ProxyState.questions = questions
   }
 
 }
 
-export const peoplesService = new PeoplesService()
+export const questionsService = new QuestionsService()
